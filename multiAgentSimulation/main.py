@@ -1,3 +1,4 @@
+import grid as grid
 from mesa.visualization.modules import CanvasGrid
 from mesa.visualization.ModularVisualization import ModularServer
 
@@ -17,6 +18,7 @@ def agent_portrayal(agent):
         portrayal["Layer"] = 1
         portrayal["r"] = 0.2
     return portrayal
+
 
 
 grid = CanvasGrid(agent_portrayal, 50, 50, 500, 500)
