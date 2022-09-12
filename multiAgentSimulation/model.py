@@ -21,5 +21,3 @@ class GameModel(Model):
 
     def step(self):
         self.schedule.step()
-
-

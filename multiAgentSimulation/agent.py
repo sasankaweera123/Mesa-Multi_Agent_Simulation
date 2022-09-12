@@ -8,6 +8,7 @@ class GameAgent(Agent):
         self.power = 1
 
     def step(self) -> None:
+        # print("Hi, I am agent " + str(self.unique_id) + ".")
         self.move()
         if self.power > 0:
             self.power_struggle()
