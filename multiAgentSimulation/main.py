@@ -20,8 +20,7 @@ def agent_portrayal(agent):
     return portrayal
 
 
-
-grid = CanvasGrid(agent_portrayal, 50, 50, 500, 500)
-server = ModularServer(GameModel, [grid], "Game Model", {"height": 50, "width": 50, "num_agents": 30})
+grid = CanvasGrid(agent_portrayal, 20, 20, 500, 500)
+server = ModularServer(GameModel, [grid], "Game Model", {"height": 20, "width": 20, "num_agents": 100})
 server.port = 8521  # The default
 server.launch()
