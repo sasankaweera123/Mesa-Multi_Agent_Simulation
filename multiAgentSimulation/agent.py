@@ -25,5 +25,14 @@ class GameAgent(Agent):
         cellmate = self.model.grid.get_cell_list_contents([self.pos])
         if len(cellmate) > 1:
             other = self.random.choice(cellmate)
-            other.power -= 1
-            self.power += 1
+            # When the power up agent will get the power plus and other one will get power minus
+            # If the power equal they both lost power
+            if other.power > self.power:
+                other.power += 1
+                self.power -= 1
+            elif other.power < self.power:
+                other.power -= 1
+                self.power += 1
+            elif other.power == self.power:
+                other.power -= 1
+                self.power -= 1
