@@ -12,6 +12,9 @@ class GameAgent(Agent):
         if self.power > 0:
             self.power_struggle()
 
+        if self.power <= 0:
+            self.model.schedule.remove(self)
+
     def move(self) -> None:
         possible_steps = self.model.grid.get_neighborhood(self.pos, moore=True, include_center=False)
         new_position = self.random.choice(possible_steps)

@@ -1,3 +1,6 @@
-# multi_agent_simulation
+# Multi Agent Simulation
 
-Python
+
+Multi-Agent simulation with MESA
+
+~~~~
