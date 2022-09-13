@@ -10,9 +10,12 @@ def agent_portrayal(agent):
     portrayal = {"Shape": "circle",
                  "Filled": "true",
                  "r": 0.5}
-    if agent.power > 0:
+    if agent.power > 5:
         portrayal["Color"] = "red"
         portrayal["Layer"] = 0
+    elif agent.power > 0 & agent.power <= 5:
+        portrayal["Color"] = "green"
+        portrayal["Layer"] = 1
     else:
         portrayal["Color"] = "blue"
         portrayal["Layer"] = 1
