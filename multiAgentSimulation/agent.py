@@ -5,7 +5,7 @@ class GameAgent(Agent):
 
     def __init__(self, unique_id, model):
         super().__init__(unique_id, model)
-        self.power = 1
+        self.power = 6
 
     def step(self) -> None:
         # print("Hi, I am agent " + str(self.unique_id) + ".")

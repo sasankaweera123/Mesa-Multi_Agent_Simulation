@@ -1,4 +1,3 @@
-import grid as grid
 from mesa.visualization.modules import CanvasGrid
 from mesa.visualization.ModularVisualization import ModularServer
 
@@ -7,19 +6,24 @@ from mesa.visualization.modules import CanvasGrid
 
 
 def agent_portrayal(agent):
-    portrayal = {"Shape": "circle",
-                 "Filled": "true",
-                 "r": 0.5}
+    portrayal = {"Filled": "true",
+                 }
     if agent.power > 5:
-        portrayal["Color"] = "red"
-        portrayal["Layer"] = 0
-    elif agent.power > 0 & agent.power <= 5:
+        portrayal["Shape"] = "circle"
         portrayal["Color"] = "green"
+        portrayal["Layer"] = 0
+        portrayal["r"] = 0.5
+    elif agent.power > 0:
+        portrayal["Shape"] = "circle"
+        portrayal["Color"] = "red"
         portrayal["Layer"] = 1
+        portrayal["r"] = 0.5
     else:
+        portrayal["Shape"] = "rect"
         portrayal["Color"] = "blue"
         portrayal["Layer"] = 1
-        portrayal["r"] = 0.2
+        portrayal["w"] = 1
+        portrayal["h"] = 1
     return portrayal
 
 

@@ -18,6 +18,7 @@ class GameModel(Model):
             x = self.random.randrange(self.grid.width)
             y = self.random.randrange(self.grid.height)
             self.grid.place_agent(a, (x, y))
+        #for i in range()
 
     def step(self):
         self.schedule.step()
