@@ -1,8 +1,28 @@
 from mesa.visualization.modules import CanvasGrid
 from mesa.visualization.ModularVisualization import ModularServer
+from mesa.visualization.UserParam import UserSettableParameter
 
 from model import GameModel
 from mesa.visualization.modules import CanvasGrid
+
+NUMBER_OF_CELLS = 20
+
+SIZE_OF_CANVAS_IN_PIXELS_X = 500
+SIZE_OF_CANVAS_IN_PIXELS_Y = 500
+
+
+simulation_prams = {
+    "number_of_agents": UserSettableParameter("slider",
+                                              "Number of agents",
+                                              50,  # default value
+                                              5,  # min value
+                                              100,  # max value
+                                              1,  # step
+                                              description="Choose how many agents to include in the model"),
+    "width": NUMBER_OF_CELLS,
+    "height": NUMBER_OF_CELLS
+
+}
 
 
 def agent_portrayal(agent):
@@ -27,7 +47,7 @@ def agent_portrayal(agent):
     return portrayal
 
 
-grid = CanvasGrid(agent_portrayal, 20, 20, 500, 500)
-server = ModularServer(GameModel, [grid], "Game Model", {"height": 20, "width": 20, "num_agents": 100})
+grid = CanvasGrid(agent_portrayal, NUMBER_OF_CELLS, NUMBER_OF_CELLS, SIZE_OF_CANVAS_IN_PIXELS_X, SIZE_OF_CANVAS_IN_PIXELS_Y)
+server = ModularServer(GameModel, [grid], "Game Model", simulation_prams)
 server.port = 8521  # The default
 server.launch()

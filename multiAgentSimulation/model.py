@@ -2,11 +2,12 @@ from mesa import Model
 from agent import GameAgent
 from mesa.space import MultiGrid
 from mesa.time import RandomActivation
+from mesa.datacollection import DataCollector
 
 
 class GameModel(Model):
-    def __init__(self, height, width, num_agents):
-        self.n_agents = num_agents
+    def __init__(self, height, width, number_of_agents):
+        self.n_agents = number_of_agents
         self.grid = MultiGrid(height, width, True)
         self.schedule = RandomActivation(self)
         self.running = True
