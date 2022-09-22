@@ -28,7 +28,7 @@ In the Game there are two parameters users can control
 <img src="IMG/5.png" width="350px">
 
 
-- Agent Number (After Changing the agent number need to reload the page to update)
+- Agent Number (After Changing the agent number need to click reset button to update)
 <img src="IMG/4.png" width="350px">
 
 # Packages
