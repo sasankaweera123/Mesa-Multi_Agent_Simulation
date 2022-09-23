@@ -12,9 +12,9 @@ Game Mode defult port will be `8521`
 
 Randomly create Agent Steps and move then also according to Random.<br>
 If the Agent comes to the same location below condition will be perform 
-- Power Up agent get 1 point and Power Low agent lose 1 point
-- Same Power Agent lose 1 point each 
-- If the Power == 0 Agent will Die 
+- Power Up agent get 1 point and Power Low agent lose 1 point.
+- Same Power Agent lose 1 point each.
+- If the Power = 0 Agent will die. 
 
 <br>
 <img src="IMG/2.png" width="350px">
