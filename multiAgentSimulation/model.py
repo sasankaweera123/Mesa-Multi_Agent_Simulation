@@ -12,6 +12,15 @@ class GameModel(Model):
         self.schedule = RandomActivation(self)
         self.running = True
 
+        self.AgentDataCollector = DataCollector(
+            {
+                "High Power Agents": GameModel.get_high_power_agents,
+                "Low Power Agents": GameModel.get_low_power_agents,
+                "Died Agents": GameModel.get_died_agents,
+            }
+        )
+
+        # Agent Creation
         for i in range(self.n_agents):
             a = GameAgent(i, self)
             self.schedule.add(a)
@@ -19,7 +28,20 @@ class GameModel(Model):
             x = self.random.randrange(self.grid.width)
             y = self.random.randrange(self.grid.height)
             self.grid.place_agent(a, (x, y))
-        #for i in range()
+        # for i in range()
 
     def step(self):
         self.schedule.step()
+        self.AgentDataCollector.collect(self)
+
+    @staticmethod
+    def get_high_power_agents(model) -> list[int]:
+        return [1 for agent in model.schedule.agents if agent.power > 5]
+
+    @staticmethod
+    def get_low_power_agents(model) -> list[int]:
+        return [1 for agent in model.schedule.agents if agent.power > 0 & agent.power < 5]
+
+    @staticmethod
+    def get_died_agents(model) -> list[int]:
+        return [1 for agent in model.schedule.agents if agent.power == 0]

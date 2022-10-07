@@ -3,7 +3,7 @@ from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.UserParam import UserSettableParameter
 
 from model import GameModel
-from mesa.visualization.modules import CanvasGrid
+from mesa.visualization.modules import CanvasGrid, ChartModule
 
 NUMBER_OF_CELLS = 20
 
@@ -48,6 +48,13 @@ def agent_portrayal(agent):
 
 
 grid = CanvasGrid(agent_portrayal, NUMBER_OF_CELLS, NUMBER_OF_CELLS, SIZE_OF_CANVAS_IN_PIXELS_X, SIZE_OF_CANVAS_IN_PIXELS_Y)
-server = ModularServer(GameModel, [grid], "Game Model", simulation_prams)
+AgentChart = ChartModule([
+    {"Label": "High Power Agents", "Color": "red"},
+    {"Label": "Low Power Agents", "Color": "green"},
+    {"Label": "Died Agents", "Color": "blue"},
+],
+    canvas_height=150, data_collector_name="AgentDataCollector")
+
+server = ModularServer(GameModel, [grid,AgentChart], "Game Model", simulation_prams)
 server.port = 8521  # The default
 server.launch()
