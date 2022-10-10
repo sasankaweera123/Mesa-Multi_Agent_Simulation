@@ -1,7 +1,6 @@
 # Multi Agent Simulation
 
-![](https://github.com/sasankaweera123/Mesa-Multi_Agent_Simulation/blob/main/IMG/gif/gameovergif.gif)
-![](https://github.com/sasankaweera123/Mesa-Multi_Agent_Simulation/blob/main/IMG/gif/githubgif.mp4)
+![](https://github.com/sasankaweera123/Mesa-Multi_Agent_Simulation/blob/main/IMG/gif/githubgif.gif)
 
 Game Mode is the game design using multi agent simulation theory. <br><br> [![oython](https://skillicons.dev/icons?i=py)](https://skillicons.dev)
 
